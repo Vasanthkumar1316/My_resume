@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasanthkumar S | Full-Stack Developer & Team Lead</title>
     <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/190229478?v=4">
-    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/190229478?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6C63FF;
-            --primary-dark: #564FD8;
-            --secondary: #2D2B55;
-            --accent: #FF6584;
-            --accent-light: #FF8DA1;
-            --light: #F7F9FC;
-            --dark: #1A1A2E;
-            --gray: #8A8AA3;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --border: #bdc3c7;
         }
 
         * {
@@ -34,269 +32,127 @@
 
         body {
             font-family: 'Source Sans Pro', sans-serif;
-            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            background: #f5f7fa;
             color: var(--dark);
-            line-height: 1.6;
-            min-height: 100vh;
+            line-height: 1.4;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            overflow-x: hidden;
+            min-height: 100vh;
         }
 
+        /* A4 Size Container */
         .resume-container {
-            max-width: 1200px;
-            width: 100%;
+            width: 210mm;
+            min-height: 297mm;
             background: white;
-            border-radius: 25px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
-            transform: scale(0.95);
-            opacity: 0;
-            animation: containerEntrance 1s ease forwards;
+            overflow: hidden;
         }
 
-        @keyframes containerEntrance {
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Geometric Background Pattern */
-        .geometric-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            background-image: 
-                radial-gradient(circle at 25% 25%, var(--primary) 2px, transparent 0),
-                radial-gradient(circle at 75% 75%, var(--accent) 2px, transparent 0);
-            background-size: 50px 50px;
-            z-index: 0;
-        }
-
+        /* Header Section */
         .resume-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: var(--primary);
             color: white;
-            padding: 60px 40px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-
-        .floating-shapes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: floatShape 20s infinite linear;
-        }
-
-        .shape-1 {
-            width: 100px;
-            height: 100px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape-2 {
-            width: 150px;
-            height: 150px;
-            top: 60%;
-            left: 80%;
-            animation-delay: -5s;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        }
-
-        .shape-3 {
-            width: 80px;
-            height: 80px;
-            top: 80%;
-            left: 20%;
-            animation-delay: -10s;
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
-
-        @keyframes floatShape {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -50px) rotate(120deg); }
-            66% { transform: translate(-20px, 20px) rotate(240deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        .profile-section {
+            padding: 25px 35px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: relative;
-            z-index: 2;
+            border-bottom: 5px solid var(--secondary);
         }
 
         .avatar-container {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
             overflow: hidden;
-            animation: avatarPulse 4s ease-in-out infinite;
-        }
-
-        @keyframes avatarPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .avatar-container::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-right: 25px;
+            flex-shrink: 0;
         }
 
         .avatar-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
-            z-index: 2;
+        }
+
+        .header-content {
+            flex-grow: 1;
         }
 
         .name {
             font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;
         }
 
         .title {
-            font-size: 22px;
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 25px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-            border-radius: 2px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--light-gray);
         }
 
         .tagline {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            font-size: 13px;
+            margin-bottom: 12px;
             opacity: 0.9;
-            line-height: 1.6;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 12px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 12px 20px;
-            border-radius: 50px;
-            backdrop-filter: blur(5px);
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
+            gap: 6px;
+            font-size: 12px;
         }
 
         .contact-item i {
-            color: var(--accent-light);
+            color: var(--secondary);
+            width: 14px;
+            text-align: center;
         }
 
+        /* Main Content Layout */
         .resume-body {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 0;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: 35% 65%;
+            min-height: calc(297mm - 180px);
         }
 
         .left-column {
             background: var(--light);
-            padding: 40px 30px;
-            position: relative;
+            padding: 20px;
+            border-right: 1px solid var(--border);
         }
 
         .right-column {
-            padding: 40px 30px;
-            background: white;
+            padding: 20px;
         }
 
+        /* Section Styling */
         .section {
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
+            margin-bottom: 18px;
         }
 
         .section-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--secondary);
             position: relative;
-            display: inline-block;
         }
 
         .section-title::after {
@@ -304,339 +160,282 @@
             position: absolute;
             bottom: -2px;
             left: 0;
-            width: 40px;
+            width: 35px;
             height: 2px;
             background: var(--accent);
         }
 
+        /* About Section */
         .about-text {
+            font-size: 13px;
+            line-height: 1.5;
             text-align: justify;
-            font-size: 16px;
-            line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .specialization {
             display: inline-block;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background: var(--secondary);
             color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
             font-weight: 600;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
         }
 
-        /* Hexagon Skill Grid */
-        .skills-grid {
+        /* Skills Design */
+        .skills-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
         }
 
-        .skill-hexagon {
-            position: relative;
-            width: 100%;
-            height: 80px;
-            background: white;
+        .skill-item {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid #f0f0f0;
-        }
-
-        .skill-hexagon:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            background: var(--primary);
-            color: white;
-        }
-
-        .skill-hexagon i {
-            font-size: 24px;
-            margin-right: 10px;
-            color: var(--primary);
-        }
-
-        .skill-hexagon:hover i {
-            color: white;
+            flex-direction: column;
         }
 
         .skill-name {
             font-weight: 600;
-            font-size: 14px;
-        }
-
-        /* Timeline with Cards */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--primary);
-            border-radius: 3px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding-left: 30px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 10px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--primary);
-            z-index: 2;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--primary);
-            transition: var(--transition);
-        }
-
-        .timeline-content:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-date {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
+            font-size: 12px;
             margin-bottom: 5px;
-        }
-
-        .timeline-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: var(--secondary);
-        }
-
-        .timeline-desc {
-            font-size: 14px;
-            color: var(--gray);
-        }
-
-        /* Experience Cards */
-        .experience-cards {
-            display: grid;
-            gap: 25px;
-        }
-
-        .experience-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border-top: 5px solid var(--primary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-
-        .experience-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
         }
 
-        .card-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .card-company {
-            font-size: 16px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .card-date {
-            font-size: 14px;
-            color: var(--gray);
-            background: var(--light);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-
-        .card-desc {
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tech-tag {
-            background: var(--light);
-            color: var(--primary);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .tech-tag:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        /* Project Showcase */
-        .project-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
+        .skill-bar {
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-title {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .education-details {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 3px;
+        }
+
+        .education-date {
+            font-size: 11px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .experience-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--primary);
+        }
+
+        .experience-company {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .experience-date {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .experience-desc {
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        /* Projects Section */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .project-item {
+            background: var(--light);
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 3px solid var(--secondary);
+            margin-bottom: 10px;
             position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 20px;
         }
 
         .project-title {
-            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 5px;
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-right: 70px;
+        }
+
+        .project-title i {
+            color: var(--secondary);
+            font-size: 14px;
         }
 
         .project-type {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .project-body {
-            padding: 20px;
+            font-size: 11px;
+            color: var(--gray);
+            margin-bottom: 6px;
+            font-style: italic;
         }
 
         .project-desc {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 15px;
+            font-size: 12px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .framework-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 9px;
+            font-weight: 600;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+
+        .laravel-badge {
+            background: #ff2d20;
+        }
+
+        .codeigniter-badge {
+            background: #dd4814;
+        }
+
+        /* Expertise Section */
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .expertise-tag {
+            background: var(--light-gray);
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+            }
+            
+            .resume-container {
+                width: 100%;
+                height: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .resume-header {
+                padding: 20px 30px;
+            }
+            
+            .resume-body {
+                min-height: auto;
+            }
+            
+            .left-column, .right-column {
+                padding: 18px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
         }
 
         /* Responsive Design */
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .resume-body {
                 grid-template-columns: 1fr;
             }
             
-            .resume-header {
-                clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .resume-header {
-                padding: 40px 20px;
+            .left-column {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
             }
             
-            .name {
-                font-size: 32px;
+            .resume-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .avatar-container {
+                margin-right: 0;
+                margin-bottom: 15px;
             }
             
             .contact-info {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
+                justify-content: center;
             }
             
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-showcase {
-                grid-template-columns: 1fr;
+            .project-title {
+                padding-right: 60px;
             }
         }
     </style>
 </head>
 <body>
     <div class="resume-container">
-        <div class="geometric-bg"></div>
-        
         <header class="resume-header">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
+            <div class="avatar-container">
+                <img src="https://avatars.githubusercontent.com/u/190229478?v=4" alt="Vasanthkumar S">
             </div>
-            
-            <div class="profile-section">
-                <div class="avatar-container">
-                    <img src="https://avatars.githubusercontent.com/u/190229478?v=4" alt="Vasanthkumar S">
-                </div>
+            <div class="header-content">
                 <h1 class="name">Vasanthkumar S</h1>
                 <p class="title">Full-Stack Developer & Team Lead</p>
                 <p class="tagline">CRM & ERP Specialist | AI Solutions | Payment Gateway Integration</p>
@@ -654,6 +453,10 @@
                         <i class="fab fa-github"></i>
                         <span>github.com/Vasanthkumar1316</span>
                     </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Madurai, Tamilnadu, India</span>
+                    </div>
                 </div>
             </div>
         </header>
@@ -661,212 +464,264 @@
         <div class="resume-body">
             <div class="left-column">
                 <section class="section" id="about">
-                    <h2 class="section-title">About Me</h2>
+                    <h2 class="section-title">Professional Summary</h2>
                     <p class="about-text">
-                        I am a passionate Full-Stack Developer with expertise in building CRM and ERP solutions. 
-                        I specialize in backend technologies like PHP, Laravel, and CodeIgniter and have strong 
-                        database management skills using MySQL and PostgreSQL.
+                        Full-Stack Developer with experience in building enterprise-level CRM and ERP solutions. 
+                        Expert in PHP frameworks (Laravel, CodeIgniter), database architecture, and system integrations. 
+                        Proven track record of leading development teams and delivering high-performance applications.
                     </p>
                     <div class="specialization">CRM & ERP Specialist</div>
                 </section>
                 
                 <section class="section" id="skills">
-                    <h2 class="section-title">Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-hexagon">
-                            <i class="fab fa-html5"></i>
-                            <span class="skill-name">HTML5</span>
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>PHP</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
                         </div>
-                        <div class="skill-hexagon">
-                            <i class="fab fa-css3-alt"></i>
-                            <span class="skill-name">CSS3</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Laravel</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
                         </div>
-                        <div class="skill-hexagon">
-                            <i class="fab fa-js-square"></i>
-                            <span class="skill-name">JavaScript</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>MySQL</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
                         </div>
-                        <div class="skill-hexagon">
-                            <i class="fab fa-php"></i>
-                            <span class="skill-name">PHP</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>PostgreSQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
-                        <div class="skill-hexagon">
-                            <i class="fab fa-laravel"></i>
-                            <span class="skill-name">Laravel</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
-                        <div class="skill-hexagon">
-                            <i class="fas fa-database"></i>
-                            <span class="skill-name">MySQL</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>REST API</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
                         </div>
-                        <div class="skill-hexagon">
-                            <i class="fas fa-server"></i>
-                            <span class="skill-name">PostgreSQL</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Git</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
                         </div>
-                        <div class="skill-hexagon">
-                            <i class="fab fa-git-alt"></i>
-                            <span class="skill-name">Git</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>CodeIgniter</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
                 
                 <section class="section" id="education">
                     <h2 class="section-title">Education</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="timeline-date">Master's Degree</div>
-                                <h3 class="timeline-title">Master of Computer Applications</h3>
-                                <p class="timeline-desc">Specialized in Software Development</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="timeline-date">Bachelor's Degree</div>
-                                <h3 class="timeline-title">B.Sc in Information Technology</h3>
-                                <p class="timeline-desc">Foundation in IT and Programming</p>
-                            </div>
-                        </div>
+                    <div class="education-item">
+                        <h3 class="education-title">Master of Computer Applications</h3>
+                        <p class="education-details">Specialized in Software Development</p>
+                        <p class="education-date">Master's Degree</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3 class="education-title">B.Sc in Information Technology</h3>
+                        <p class="education-details">Foundation in IT and Programming</p>
+                        <p class="education-date">Bachelor's Degree</p>
                     </div>
                 </section>
             </div>
             
             <div class="right-column">
                 <section class="section" id="experience">
-                    <h2 class="section-title">Work Experience</h2>
-                    <div class="experience-cards">
-                        <div class="experience-card">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-title">Team Lead & Full-Stack Developer</h3>
-                                    <p class="card-company">Elysium Intelligence Business Solutions</p>
-                                </div>
-                                <div class="card-date">Present</div>
+                    <h2 class="section-title">Professional Experience</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Full-Stack Developer & Team Lead</h3>
+                                <p class="experience-company">Elysium Intelligence Business Solutions</p>
                             </div>
-                            <p class="card-desc">
-                                Leading development teams in building robust CRM and ERP solutions using PHP frameworks.
-                                Specializing in backend architecture, database design, and system integrations.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">Laravel</span>
-                                <span class="tech-tag">CodeIgniter</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">REST API</span>
-                            </div>
+                            <div class="experience-date">Mar 2023 - Present</div>
+                        </div>
+                        <p class="experience-desc">
+                            Lead a team of developers in designing and implementing enterprise CRM and ERP solutions. 
+                            Architect backend systems, optimize database performance, and integrate third-party APIs. 
+                            Successfully delivered multiple large-scale applications across education, finance, and retail sectors.
+                        </p>
+                        <div class="expertise-tags">
+                            <span class="expertise-tag">PHP</span>
+                            <span class="expertise-tag">Laravel</span>
+                            <span class="expertise-tag">MySQL</span>
+                            <span class="expertise-tag">PostgreSQL</span>
+                            <span class="expertise-tag">REST API</span>
+                            <span class="expertise-tag">Team Leadership</span>
                         </div>
                     </div>
                 </section>
                 
                 <section class="section" id="projects">
-                    <h2 class="section-title">Projects & Specializations</h2>
-                    <div class="project-showcase">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">Data Entry CRM</h3>
-                                <p class="project-type">Advanced Data Management System</p>
-                            </div>
-                            <div class="project-body">
-                                <p class="project-desc">
-                                    Developed a comprehensive data entry CRM.
-                                    Implemented advanced data processing algorithms for improved efficiency.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">CodeIgniter</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                </div>
+                    <h2 class="section-title">Live Projects</h2>
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-user-graduate"></i> PhD CRM
+                            </h3>
+                            <span class="framework-badge laravel-badge">Laravel</span>
+                            <p class="project-type">Academic Research Management System</p>
+                            <p class="project-desc">
+                                Comprehensive CRM for PhD program management with student tracking, research progress monitoring, and publication management.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">MySQL</span>
+                                <span class="expertise-tag">Payment Gateway</span>
+                                <span class="expertise-tag">Cloud APIs</span>
                             </div>
                         </div>
                         
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">Gold Bank & Trade CRM</h3>
-                                <p class="project-type">Financial Management System</p>
-                            </div>
-                            <div class="project-body">
-                                <p class="project-desc">
-                                    Built a specialized CRM for gold banking and trading operations with real-time tracking,
-                                    transaction management, and secure payment processing capabilities.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">CodeIgniter</span>
-                                    <span class="tech-tag">SQL</span>
-                                    <span class="tech-tag">jQuery</span>
-                                </div>
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-graduation-cap"></i> Academy ERP
+                            </h3>
+                            <span class="framework-badge laravel-badge">Laravel</span>
+                            <p class="project-type">Educational Management Platform</p>
+                            <p class="project-desc">
+                                Complete academy management system with course ordering, student enrollment, payment processing, and progress tracking.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Payment Gateway</span>
+                                <span class="expertise-tag">OpenAI</span>
+                                <span class="expertise-tag">Mobile APIs</span>
                             </div>
                         </div>
                         
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">Loan Management ERP</h3>
-                                <p class="project-type">Financial Services Platform</p>
-                            </div>
-                            <div class="project-body">
-                                <p class="project-desc">
-                                    Created a comprehensive loan management system with applicant tracking, credit scoring,
-                                    repayment scheduling, and automated communication features.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">PHP</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">API Integration</span>
-                                </div>
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-file-alt"></i> Exam Management System
+                            </h3>
+                            <span class="framework-badge laravel-badge">Laravel</span>
+                            <p class="project-type">Educational Assessment Platform</p>
+                            <p class="project-desc">
+                                Comprehensive exam management system with question banks, automated test generation, real-time monitoring, and result analytics.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">MySQL</span>
+                                <span class="expertise-tag">Real-time</span>
+                                <span class="expertise-tag">Analytics</span>
                             </div>
                         </div>
                         
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">Academy with AI Integration</h3>
-                                <p class="project-type">Educational Platform</p>
-                            </div>
-                            <div class="project-body">
-                                <p class="project-desc">
-                                    Developed an educational academy platform with AI-powered personalized learning paths,
-                                    progress tracking, and automated assessment systems.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Laravel</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">MySQL</span>
-                                </div>
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-book-open"></i> Learning Management System
+                            </h3>
+                            <span class="framework-badge laravel-badge">Laravel</span>
+                            <p class="project-type">Online Education Platform</p>
+                            <p class="project-desc">
+                                Advanced LMS with course creation, student progress tracking, interactive content delivery, and comprehensive reporting dashboard.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">MySQL</span>
+                                <span class="expertise-tag">REST API</span>
+                                <span class="expertise-tag">Content Management</span>
                             </div>
                         </div>
                         
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">Payment Gateway Integration</h3>
-                                <p class="project-type">PayPal, Stripe, Razorpay</p>
-                            </div>
-                            <div class="project-body">
-                                <p class="project-desc">
-                                    Implemented secure payment processing systems integrating multiple payment gateways 
-                                    for e-commerce applications with advanced fraud detection.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">PHP</span>
-                                    <span class="tech-tag">API Integration</span>
-                                    <span class="tech-tag">Security</span>
-                                    <span class="tech-tag">Encryption</span>
-                                </div>
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-robot"></i> AI Recruiter
+                            </h3>
+                            <span class="framework-badge codeigniter-badge">CodeIgniter</span>
+                            <p class="project-type">Intelligent Recruitment System</p>
+                            <p class="project-desc">
+                                AI-powered recruitment platform with resume parsing, candidate matching, automated screening, and interview scheduling.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">OpenAI</span>
+                                <span class="expertise-tag">MySQL</span>
+                                <span class="expertise-tag">AI Integration</span>
                             </div>
                         </div>
                         
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">CAPTCHA Security System</h3>
-                                <p class="project-type">Advanced Security Implementation</p>
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-coins"></i> Gold Bank CRM
+                            </h3>
+                            <span class="framework-badge codeigniter-badge">CodeIgniter</span>
+                            <p class="project-type">Financial Management System</p>
+                            <p class="project-desc">
+                                Specialized CRM for gold banking operations with real-time gold price tracking, customer portfolio management, and secure transactions.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">SQL</span>
+                                <span class="expertise-tag">API</span>
+                                <span class="expertise-tag">Mobile APIs</span>
                             </div>
-                            <div class="project-body">
-                                <p class="project-desc">
-                                    Developed custom CAPTCHA systems with advanced security features to protect web applications
-                                    from automated attacks and spam submissions.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">PHP</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">Security</span>
-                                </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-hand-holding-usd"></i> Loan Management System
+                            </h3>
+                            <span class="framework-badge codeigniter-badge">CodeIgniter</span>
+                            <p class="project-type">Financial Services Platform</p>
+                            <p class="project-desc">
+                                Comprehensive loan management system with applicant tracking, credit scoring, repayment scheduling, and automated communications.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">MySQL</span>
+                                <span class="expertise-tag">API</span>
+                                <span class="expertise-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h3 class="project-title">
+                                <i class="fas fa-chart-line"></i> Trade Management Platform
+                            </h3>
+                            <span class="framework-badge codeigniter-badge">CodeIgniter</span>
+                            <p class="project-type">Trading Platform</p>
+                            <p class="project-desc">
+                                Advanced trading platform with real-time market data, portfolio management, trade execution, and performance analytics.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">API</span>
+                                <span class="expertise-tag">MySQL</span>
+                                <span class="expertise-tag">JavaScript</span>
                             </div>
                         </div>
                     </div>
@@ -874,68 +729,27 @@
                 
                 <section class="section" id="expertise">
                     <h2 class="section-title">Areas of Expertise</h2>
-                    <div class="tech-stack">
-                        <span class="tech-tag">CRM Development</span>
-                        <span class="tech-tag">ERP Solutions</span>
-                        <span class="tech-tag">Payment Gateway Integration</span>
-                        <span class="tech-tag">Team Leadership</span>
-                        <span class="tech-tag">AI-Powered Solutions</span>
-                        <span class="tech-tag">Database Design</span>
-                        <span class="tech-tag">REST API Development</span>
-                        <span class="tech-tag">Full-Stack Development</span>
-                        <span class="tech-tag">Financial Systems</span>
-                        <span class="tech-tag">Security Implementation</span>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">CRM Development</span>
+                        <span class="expertise-tag">ERP Solutions</span>
+                        <span class="expertise-tag">Payment Gateway Integration</span>
+                        <span class="expertise-tag">Team Leadership</span>
+                        <span class="expertise-tag">AI-Powered Solutions</span>
+                        <span class="expertise-tag">Database Design</span>
+                        <span class="expertise-tag">REST API Development</span>
+                        <span class="expertise-tag">Full-Stack Development</span>
+                        <span class="expertise-tag">System Architecture</span>
+                        <span class="expertise-tag">Mobile Application APIs</span>
+                        <span class="expertise-tag">Security Implementation</span>
+                        <span class="expertise-tag">Performance Optimization</span>
+                        <span class="expertise-tag">Educational Platforms</span>
+                        <span class="expertise-tag">Financial Systems</span>
+                        <span class="expertise-tag">Retail Management</span>
+                        <span class="expertise-tag">Real-time Analytics</span>
                     </div>
                 </section>
             </div>
         </div>
     </div>
-
-    <script>
-        // Scroll animations for sections
-        const sections = document.querySelectorAll('.section');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-
-        // Add hover effects with delays
-        document.querySelectorAll('.skill-hexagon').forEach((hexagon, index) => {
-            hexagon.style.transitionDelay = (index * 0.1) + 's';
-        });
-
-        // Add entrance animation to contact items
-        document.querySelectorAll('.contact-item').forEach((item, index) => {
-            item.style.animationDelay = (index * 0.1) + 's';
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.animation = `fadeInUp 0.5s ease ${index * 0.1}s forwards`;
-        });
-
-        // Add CSS for animations
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeInUp {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
 </body>
 </html>
